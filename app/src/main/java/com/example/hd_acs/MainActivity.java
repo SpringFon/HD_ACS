@@ -3,6 +3,7 @@ package com.example.hd_acs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,13 +15,15 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnWrkPrs, btnManufProd, btnStorage, btnManufProdCrt, btnStorageCrt,btnDefProd ,btnDefProdCrt, btnPanama, btnHat, btnVisor, btnKartuz, btnCap, btnBeretFr, btnBeretVol, btnBeretCz, btnCapLinda, btnUshanka, btnJockeyka, btnJockeykaFurr, btnEightblade;
-    private ImageButton btnNavLeftOpener, btnNavRightOpener, btnNavLeftCloser, btnNavRightCloser, imgBtnOptions, imgBtnHome, imgBtnProfile, imgBtnHatsOpener, imgBtnMerchOpener;
+    private ImageButton btnNavLeftOpener, btnNavRightOpener, btnNavLeftCloser, btnNavRightCloser, imgBtnOptions, imgBtnHome, imgBtnProfile, imgBtnHatsOpener, imgBtnMerchOpener, imgBtnHatsAdd;
     private FrameLayout navBarLeft, navBarRight, layHats, layMerch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imgBtnHatsAdd = findViewById(R.id.imgBtnHatsAdd);
 
         btnWrkPrs = (Button) findViewById(R.id.btnWrkPrs);
         btnManufProd = (Button) findViewById(R.id.btnManufProd);
@@ -95,6 +98,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         imgBtnHatsOpener.setOnClickListener(this);
         imgBtnMerchOpener.setOnClickListener(this);
+
+        imgBtnHatsAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent229 = new Intent(MainActivity.this, Recycler.class);
+                startActivity(intent229);
+                finish();
+            }
+        });
 
     }
 

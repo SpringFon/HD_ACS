@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".Recycler"
+            android:exported="false" />
+        <activity
+            android:name="."
+            android:exported="false" />
+        <activity
             android:name=".HatsPanamaActivity"
             android:exported="false" />
         <activity
