@@ -14,9 +14,6 @@
             android:name=".Recycler"
             android:exported="false" />
         <activity
-            android:name="."
-            android:exported="false" />
-        <activity
             android:name=".HatsPanamaActivity"
             android:exported="false" />
         <activity

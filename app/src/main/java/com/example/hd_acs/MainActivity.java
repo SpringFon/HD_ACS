@@ -9,21 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnWrkPrs, btnManufProd, btnStorage, btnManufProdCrt, btnStorageCrt,btnDefProd ,btnDefProdCrt, btnPanama, btnHat, btnVisor, btnKartuz, btnCap, btnBeretFr, btnBeretVol, btnBeretCz, btnCapLinda, btnUshanka, btnJockeyka, btnJockeykaFurr, btnEightblade;
-    private ImageButton btnNavLeftOpener, btnNavRightOpener, btnNavLeftCloser, btnNavRightCloser, imgBtnOptions, imgBtnHome, imgBtnProfile, imgBtnHatsOpener, imgBtnMerchOpener, imgBtnHatsAdd;
-    private FrameLayout navBarLeft, navBarRight, layHats, layMerch;
+    private Button btnWrkPrs, btnManufProd, btnStorage, btnManufProdCrt, btnStorageCrt,btnDefProd ,btnDefProdCrt;
+    private ImageButton btnNavLeftOpener, btnNavRightOpener, btnNavLeftCloser, btnNavRightCloser, imgBtnOptions, imgBtnHome, imgBtnProfile;
+    private FrameLayout navBarLeft, navBarRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        imgBtnHatsAdd = findViewById(R.id.imgBtnHatsAdd);
 
         btnWrkPrs = (Button) findViewById(R.id.btnWrkPrs);
         btnManufProd = (Button) findViewById(R.id.btnManufProd);
@@ -33,38 +30,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDefProd = (Button) findViewById(R.id.btnDefProd);
         btnDefProdCrt = (Button) findViewById(R.id.btnDefProdCrt);
 
-        btnPanama = (Button) findViewById(R.id.btnPanama);
-        btnHat = (Button) findViewById(R.id.btnHat);
-        btnVisor = (Button) findViewById(R.id.btnVisor);
-        btnKartuz = (Button) findViewById(R.id.btnKartuz);
-        btnCap = (Button) findViewById(R.id.btnCap);
-        btnBeretFr = (Button) findViewById(R.id.btnBeretFr);
-        btnBeretVol = (Button) findViewById(R.id.btnBeretVol);
-        btnBeretCz = (Button) findViewById(R.id.btnBeretCz);
-        btnCapLinda = (Button) findViewById(R.id.btnCapLinda);
-        btnUshanka = (Button) findViewById(R.id.btnUshanka);
-        btnJockeyka = (Button) findViewById(R.id.btnJockeyka);
-        btnJockeykaFurr = (Button) findViewById(R.id.btnJockeykaFurr);
-        btnEightblade = (Button) findViewById(R.id.btnEightblade);
-
         btnDefProdCrt = (Button) findViewById(R.id.btnDefProdCrt);
         btnDefProdCrt = (Button) findViewById(R.id.btnDefProdCrt);
         btnDefProdCrt = (Button) findViewById(R.id.btnDefProdCrt);
 
         btnNavLeftOpener = (ImageButton) findViewById(R.id.btnNavLeftOpener);
         btnNavRightOpener = (ImageButton) findViewById(R.id.btnNavRightOpener);
-        btnNavLeftCloser = (ImageButton) findViewById(R.id.btnNavLeftCloser);
-        btnNavRightCloser = (ImageButton) findViewById(R.id.btnNavRightCloser);
         imgBtnOptions = (ImageButton) findViewById(R.id.imgBtnOptions);
         imgBtnHome = (ImageButton) findViewById(R.id.imgBtnHome);
         imgBtnProfile = (ImageButton) findViewById(R.id.imgBtnProfile);
-        imgBtnHatsOpener = (ImageButton) findViewById(R.id.imgBtnHatsOpener);
-        imgBtnMerchOpener = (ImageButton) findViewById(R.id.imgBtnMerchOpener);
 
         navBarLeft = (FrameLayout) findViewById(R.id.navBarLeft);
         navBarRight = (FrameLayout) findViewById(R.id.navBarRight);
-        layHats = (FrameLayout) findViewById(R.id.layHats);
-        layMerch = (FrameLayout) findViewById(R.id.layMerch);
 
         btnWrkPrs.setOnClickListener(this);
         btnManufProd.setOnClickListener(this);
@@ -74,50 +51,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDefProd.setOnClickListener(this);
         btnDefProdCrt.setOnClickListener(this);
 
-        btnPanama.setOnClickListener(this);
-        btnHat.setOnClickListener(this);
-        btnVisor.setOnClickListener(this);
-        btnKartuz.setOnClickListener(this);
-        btnCap.setOnClickListener(this);
-        btnBeretFr.setOnClickListener(this);
-        btnBeretVol.setOnClickListener(this);
-        btnBeretCz.setOnClickListener(this);
-        btnCapLinda.setOnClickListener(this);
-        btnUshanka.setOnClickListener(this);
-        btnJockeyka.setOnClickListener(this);
-        btnJockeykaFurr.setOnClickListener(this);
-
         btnNavLeftOpener.setOnClickListener(this);
         btnNavRightOpener.setOnClickListener(this);
-        btnNavLeftCloser.setOnClickListener(this);
-        btnNavRightCloser.setOnClickListener(this);
 
         imgBtnOptions.setOnClickListener(this);
         imgBtnHome.setOnClickListener(this);
         imgBtnProfile.setOnClickListener(this);
-
-        imgBtnHatsOpener.setOnClickListener(this);
-        imgBtnMerchOpener.setOnClickListener(this);
-
-        imgBtnHatsAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent229 = new Intent(MainActivity.this, Recycler.class);
-                startActivity(intent229);
-                finish();
-            }
-        });
-
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnPanama:
-                Intent actP = new Intent(MainActivity.this, HatsPanamaActivity.class);
-                startActivity(actP);
-                finish();
-                break;
             case R.id.btnWrkPrs:
                 Intent actWPA = new Intent(MainActivity.this, WorkersProgressActivity.class);
                 startActivity(actWPA);
@@ -159,32 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.btnNavLeftOpener:
-                navBarLeft.setVisibility(View.VISIBLE);
-                navBarRight.setVisibility(View.INVISIBLE);
+                Intent intent229 = new Intent(MainActivity.this, Recycler.class);
+                startActivity(intent229);
+                finish();
                 break;
             case R.id.btnNavRightOpener:
                 navBarRight.setVisibility(View.VISIBLE);
                 navBarLeft.setVisibility(View.INVISIBLE);
-                break;
-            case R.id.btnNavLeftCloser:
-                navBarLeft.setVisibility(View.INVISIBLE);
-                break;
-            case R.id.btnNavRightCloser:
-                navBarRight.setVisibility(View.INVISIBLE);
-                break;
-            case R.id.imgBtnHatsOpener:
-                if (layHats.getVisibility() == View.GONE){
-                    layHats.setVisibility(View.VISIBLE);
-                } else {
-                    layHats.setVisibility(View.GONE);
-                }
-                break;
-            case R.id.imgBtnMerchOpener:
-                if (layMerch.getVisibility() == View.GONE){
-                    layMerch.setVisibility(View.VISIBLE);
-                } else {
-                    layMerch.setVisibility(View.GONE);
-                }
                 break;
         }
     }

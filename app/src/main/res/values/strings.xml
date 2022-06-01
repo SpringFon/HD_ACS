@@ -79,6 +79,7 @@
     <string name="btnManufProdCrt">Создать отчёт по произведённой продукции</string>
     <string name="btnDefProdCrt">Создать отчёт по забракованной продукции</string>
     <string name="btnCrtReport">Создать отчёт</string>
+    <string name="Add">Добавить</string>
 
     <string name="options">Опции</string>
     <string name="productivity">Продуктивность</string>
